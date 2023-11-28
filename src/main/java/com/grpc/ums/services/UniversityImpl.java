@@ -1,4 +1,4 @@
-package com.grpc.ums.servicesimpl;
+package com.grpc.ums.services;
 
 
 import generatedClasses.UniversityServiceGrpc;
