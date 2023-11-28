@@ -1,0 +1,36 @@
+syntax="proto3";
+
+package proto; //path of where we have to generate the code
+import "student.proto";
+import "department.proto";
+
+option java_package = "generatedClasses";
+
+message University {
+    int64 university_id = 1;
+    string name = 2;
+    string location= 3;
+    repeated Student students = 4;
+    repeated Department departments = 5;
+}
+
+service UniversityService {
+    rpc AddUniversity (University) returns (University);
+    rpc GetUniversity (UniversityRequest) returns (University);
+    rpc GetAllUniversities(EmptyRequest1) returns (stream UniversitiesResponse);
+    rpc UpdateUniversity(University) returns (University);
+    rpc DeleteUniversity(UniversityRequest) returns (EmptyResponse1);
+    rpc GetStudents (UniversityRequest) returns (stream StudentsResponse);
+}
+
+message UniversityRequest {
+    int64 university_id = 1;
+}
+
+message EmptyRequest {}
+
+message UniversitiesResponse {
+    repeated University universities = 1;
+}
+
+message EmptyResponse {}

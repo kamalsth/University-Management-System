@@ -1,0 +1,28 @@
+syntax="proto3";
+
+option java_package = "generatedClasses";
+
+message Department {
+  int64 department_id = 1;
+  string name = 2;
+}
+
+
+service DepartmentService {
+  rpc AddDepartment(Department) returns (Department);
+  rpc GetDepartment (DepartmentRequest) returns (Department);
+  rpc GetAllDepartments(EmptyRequest2) returns (stream DepartmentsResponse);
+  rpc DeleteDepartment(DepartmentRequest) returns (EmptyResponse2);
+  rpc UpdateDepartment(Department) returns (Department);
+}
+
+message DepartmentRequest {
+  int64 department_id = 1;
+}
+
+message DepartmentsResponse {
+  repeated Department departments = 1;
+}
+
+message EmptyRequest2 {}
+message EmptyResponse2 {}
