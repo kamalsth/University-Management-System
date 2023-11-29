@@ -24,13 +24,13 @@ public class StudentServiceImpl  implements StudentService {
     }
 
     @Override
-    public Student getStudentById(Long student_id) {
+    public Student getStudentById(long student_id) {
         return studentRepository.getStudentById(student_id);
     }
 
 
     @Override
-    public void updateStudent(Long student_id, Student student) {
+    public void updateStudent(long student_id, Student student) {
         studentRepository.updateStudent(student_id, student);
     }
 
@@ -40,7 +40,7 @@ public class StudentServiceImpl  implements StudentService {
     }
 
     @Override
-    public void deleteStudent(Long student_id) {
+    public void deleteStudent(long student_id) {
         studentRepository.deleteStudent(student_id);
     }
 

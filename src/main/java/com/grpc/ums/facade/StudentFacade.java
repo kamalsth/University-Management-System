@@ -25,7 +25,7 @@ public class StudentFacade {
         return mapToProto(studentService.saveStudent(student1));
     }
 
-    public StudentOuterClass.Student getStudentById(Long student_id) {
+    public StudentOuterClass.Student getStudentById(long student_id) {
         return mapToProto(studentService.getStudentById(student_id));
     }
 
@@ -37,7 +37,7 @@ public class StudentFacade {
                 .collect(Collectors.toList());
     }
 
-    public StudentOuterClass.Student updateStudent(Long student_id, StudentOuterClass.Student student) {
+    public StudentOuterClass.Student updateStudent(long student_id, StudentOuterClass.Student student) {
         Student student1 = mapToEntity(student);
         studentService.updateStudent(student_id, student1);
         student1.setStudent_id(student_id);
@@ -45,7 +45,7 @@ public class StudentFacade {
     }
 
 
-    public void deleteStudent(Long student_id) {
+    public void deleteStudent(long student_id) {
         studentService.deleteStudent(student_id);
     }
 

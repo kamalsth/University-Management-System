@@ -10,8 +10,8 @@ import java.util.List;
 public interface StudentRepository {
     public Student saveStudent(Student student);
 
-    public Student getStudentById(Long student_id);
+    public Student getStudentById(long student_id);
     public List<Student> getAllStudents();
-    public void updateStudent(Long student_id, Student student);
-    public void deleteStudent(Long student_id);
+    public void updateStudent(long student_id, Student student);
+    public void deleteStudent(long student_id);
 }

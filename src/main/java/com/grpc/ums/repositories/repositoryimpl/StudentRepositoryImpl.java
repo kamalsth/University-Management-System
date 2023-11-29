@@ -47,7 +47,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public Student getStudentById(Long student_id) {
+    public Student getStudentById(long student_id) {
         try (Connection connection = dataSource.getConnection()) {
             System.out.println("Connected to the database");
             try (Statement statement = connection.createStatement()) {
@@ -92,7 +92,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public void updateStudent(Long student_id, Student student) {
+    public void updateStudent(long student_id, Student student) {
         try (Connection connection = dataSource.getConnection()) {
             System.out.println("Connected to the database");
             try (Statement statement = connection.createStatement()) {
@@ -114,7 +114,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public void deleteStudent(Long student_id) {
+    public void deleteStudent(long student_id) {
         try (Connection connection = dataSource.getConnection()) {
             System.out.println("Connected to the database");
             Statement statement = connection.createStatement();
