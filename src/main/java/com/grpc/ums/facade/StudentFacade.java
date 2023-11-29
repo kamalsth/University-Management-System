@@ -6,6 +6,9 @@ import generatedClasses.StudentOuterClass;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class StudentFacade {
     private final StudentService studentService;
@@ -18,52 +21,46 @@ public class StudentFacade {
 
 
     public StudentOuterClass.Student saveStudent(StudentOuterClass.Student student) {
-        System.out.println("Student from outerClass = "+student);
         Student student1 = mapToEntity(student);
-        System.out.println("Student after mapping= "+student1.toString());
-        System.out.println("Student id after mapping to entity = "+student1.getStudent_id());
-        StudentOuterClass.Student student2= mapToProto(studentService.saveStudent(student1));
-        System.out.println("\nStudent after mapping to proto= "+student2);
-        return student2;
+        return mapToProto(studentService.saveStudent(student1));
     }
 
     public StudentOuterClass.Student getStudentById(Long student_id) {
-        System.out.println("Student id= "+student_id);
         return mapToProto(studentService.getStudentById(student_id));
     }
 
-    //
-//    public StudentOuterClass.Student saveStudent(StudentOuterClass.Student student) {
-//        Student student1 = mapToEntity(student);
-//        return mapToProto(studentService.saveStudent(student1));
-//    }
-//
-//
-//    public StudentOuterClass.Student getStudentById(Long student_id) {
-//        return mapToProto(studentService.getStudentById(student_id));
-//    }
-//
-//    public StudentOuterClass.StudentsResponse getAllStudents() {
-//        return null;
-//    }
+
+    public List<StudentOuterClass.Student> getAllStudents() {
+        List<Student> students = studentService.getAllStudents();
+        return students.stream()
+                .map(this::mapToProto)
+                .collect(Collectors.toList());
+    }
+
+    public StudentOuterClass.Student updateStudent(Long student_id, StudentOuterClass.Student student) {
+        Student student1 = mapToEntity(student);
+        studentService.updateStudent(student_id, student1);
+        student1.setStudent_id(student_id);
+        return mapToProto(student1);
+    }
+
+
+    public void deleteStudent(Long student_id) {
+        studentService.deleteStudent(student_id);
+    }
+
     private Student mapToEntity(StudentOuterClass.Student student) {
-        System.out.println("Student id in map ="+student.getStudentId());
-        return modelMapper.map(student,Student.class);
+        return modelMapper.map(student, Student.class);
     }
 
     private StudentOuterClass.Student mapToProto(Student student) {
-        System.out.println("Student id in map to proto ="+student.getStudent_id());
-        System.out.println("Student in map to proto ="+student.toString());
-        StudentOuterClass.Student student1= StudentOuterClass.Student.newBuilder()
+        return StudentOuterClass.Student.newBuilder()
                 .setStudentId(student.getStudent_id())
                 .setName(student.getName())
                 .setEmail(student.getEmail())
                 .setAddress(student.getAddress())
                 .setPhone(student.getPhone())
                 .build();
-        System.out.println("Student id in map to proto ="+student1.getStudentId());
-        System.out.println("Student in map to proto ="+student1);
-        return student1;
     }
 
 }

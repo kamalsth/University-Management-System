@@ -139,27 +139,27 @@ public final class StudentServiceGrpc {
     return getDeleteStudentMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<generatedClasses.StudentOuterClass.StudentRequest,
+  private static volatile io.grpc.MethodDescriptor<generatedClasses.StudentOuterClass.Student,
       generatedClasses.StudentOuterClass.Student> getUpdateStudentMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "UpdateStudent",
-      requestType = generatedClasses.StudentOuterClass.StudentRequest.class,
+      requestType = generatedClasses.StudentOuterClass.Student.class,
       responseType = generatedClasses.StudentOuterClass.Student.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<generatedClasses.StudentOuterClass.StudentRequest,
+  public static io.grpc.MethodDescriptor<generatedClasses.StudentOuterClass.Student,
       generatedClasses.StudentOuterClass.Student> getUpdateStudentMethod() {
-    io.grpc.MethodDescriptor<generatedClasses.StudentOuterClass.StudentRequest, generatedClasses.StudentOuterClass.Student> getUpdateStudentMethod;
+    io.grpc.MethodDescriptor<generatedClasses.StudentOuterClass.Student, generatedClasses.StudentOuterClass.Student> getUpdateStudentMethod;
     if ((getUpdateStudentMethod = StudentServiceGrpc.getUpdateStudentMethod) == null) {
       synchronized (StudentServiceGrpc.class) {
         if ((getUpdateStudentMethod = StudentServiceGrpc.getUpdateStudentMethod) == null) {
           StudentServiceGrpc.getUpdateStudentMethod = getUpdateStudentMethod =
-              io.grpc.MethodDescriptor.<generatedClasses.StudentOuterClass.StudentRequest, generatedClasses.StudentOuterClass.Student>newBuilder()
+              io.grpc.MethodDescriptor.<generatedClasses.StudentOuterClass.Student, generatedClasses.StudentOuterClass.Student>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateStudent"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  generatedClasses.StudentOuterClass.StudentRequest.getDefaultInstance()))
+                  generatedClasses.StudentOuterClass.Student.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   generatedClasses.StudentOuterClass.Student.getDefaultInstance()))
               .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("UpdateStudent"))
@@ -248,7 +248,7 @@ public final class StudentServiceGrpc {
 
     /**
      */
-    default void updateStudent(generatedClasses.StudentOuterClass.StudentRequest request,
+    default void updateStudent(generatedClasses.StudentOuterClass.Student request,
         io.grpc.stub.StreamObserver<generatedClasses.StudentOuterClass.Student> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateStudentMethod(), responseObserver);
     }
@@ -315,7 +315,7 @@ public final class StudentServiceGrpc {
 
     /**
      */
-    public void updateStudent(generatedClasses.StudentOuterClass.StudentRequest request,
+    public void updateStudent(generatedClasses.StudentOuterClass.Student request,
         io.grpc.stub.StreamObserver<generatedClasses.StudentOuterClass.Student> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateStudentMethod(), getCallOptions()), request, responseObserver);
@@ -369,7 +369,7 @@ public final class StudentServiceGrpc {
 
     /**
      */
-    public generatedClasses.StudentOuterClass.Student updateStudent(generatedClasses.StudentOuterClass.StudentRequest request) {
+    public generatedClasses.StudentOuterClass.Student updateStudent(generatedClasses.StudentOuterClass.Student request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateStudentMethod(), getCallOptions(), request);
     }
@@ -418,7 +418,7 @@ public final class StudentServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<generatedClasses.StudentOuterClass.Student> updateStudent(
-        generatedClasses.StudentOuterClass.StudentRequest request) {
+        generatedClasses.StudentOuterClass.Student request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateStudentMethod(), getCallOptions()), request);
     }
@@ -464,7 +464,7 @@ public final class StudentServiceGrpc {
               (io.grpc.stub.StreamObserver<generatedClasses.StudentOuterClass.EmptyResponse1>) responseObserver);
           break;
         case METHODID_UPDATE_STUDENT:
-          serviceImpl.updateStudent((generatedClasses.StudentOuterClass.StudentRequest) request,
+          serviceImpl.updateStudent((generatedClasses.StudentOuterClass.Student) request,
               (io.grpc.stub.StreamObserver<generatedClasses.StudentOuterClass.Student>) responseObserver);
           break;
         default:
@@ -517,7 +517,7 @@ public final class StudentServiceGrpc {
           getUpdateStudentMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              generatedClasses.StudentOuterClass.StudentRequest,
+              generatedClasses.StudentOuterClass.Student,
               generatedClasses.StudentOuterClass.Student>(
                 service, METHODID_UPDATE_STUDENT)))
         .build();

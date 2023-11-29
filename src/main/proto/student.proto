@@ -16,7 +16,7 @@ service StudentService {
     rpc GetStudent (StudentRequest) returns (Student);
     rpc GetAllStudents (EmptyRequest1) returns (stream StudentsResponse);
     rpc DeleteStudent (StudentRequest) returns (EmptyResponse1);
-    rpc UpdateStudent (StudentRequest) returns (Student);
+    rpc UpdateStudent (Student) returns (Student);
 }
 
 

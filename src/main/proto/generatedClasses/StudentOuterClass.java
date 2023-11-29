@@ -3177,15 +3177,15 @@ public final class StudentOuterClass {
       "udentsResponse\022 \n\010students\030\001 \003(\0132\016.proto" +
       ".Student\"$\n\016StudentRequest\022\022\n\nstudent_id" +
       "\030\001 \001(\003\"\017\n\rEmptyRequest1\"\020\n\016EmptyResponse" +
-      "12\255\002\n\016StudentService\022,\n\nAddStudent\022\016.pro" +
+      "12\246\002\n\016StudentService\022,\n\nAddStudent\022\016.pro" +
       "to.Student\032\016.proto.Student\0223\n\nGetStudent" +
       "\022\025.proto.StudentRequest\032\016.proto.Student\022" +
       "A\n\016GetAllStudents\022\024.proto.EmptyRequest1\032" +
       "\027.proto.StudentsResponse0\001\022=\n\rDeleteStud" +
       "ent\022\025.proto.StudentRequest\032\025.proto.Empty" +
-      "Response1\0226\n\rUpdateStudent\022\025.proto.Stude" +
-      "ntRequest\032\016.proto.StudentB\022\n\020generatedCl" +
-      "assesb\006proto3"
+      "Response1\022/\n\rUpdateStudent\022\016.proto.Stude" +
+      "nt\032\016.proto.StudentB\022\n\020generatedClassesb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

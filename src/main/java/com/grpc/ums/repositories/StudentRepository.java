@@ -2,7 +2,6 @@ package com.grpc.ums.repositories;
 
 
 import com.grpc.ums.entities.Student;
-import generatedClasses.StudentOuterClass;
 
 
 import java.util.List;

@@ -1,7 +1,5 @@
 package com.grpc.ums.entities;
 
-import generatedClasses.StudentOuterClass;
-
 public class University {
     private Long university_id;
     private String name;

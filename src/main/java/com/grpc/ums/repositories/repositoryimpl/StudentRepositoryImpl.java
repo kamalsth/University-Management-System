@@ -32,7 +32,6 @@ public class StudentRepositoryImpl implements StudentRepository {
                 try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         student.setStudent_id(generatedKeys.getLong(1));
-                        System.out.println("Student id in saveStudent ="+student.getStudent_id());
                     } else {
                         throw new SQLException("Creating student failed, no ID obtained.");
                     }
@@ -55,10 +54,7 @@ public class StudentRepositoryImpl implements StudentRepository {
                 String sql = "SELECT * FROM student WHERE student_id = " + student_id;
                 ResultSet resultSet = statement.executeQuery(sql);
                 if (resultSet.next()) {
-                    Student student= mapToStudent(resultSet);
-                    System.out.println("Student id in getStudentById ="+student.getStudent_id());
-                    System.out.println("Student in getStudentById ="+student.toString());
-                    return student;
+                    return mapToStudent(resultSet);
                 }
             } catch (SQLException e) {
                 System.out.println("Error executing the SQL query" + e.getMessage());
