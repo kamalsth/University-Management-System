@@ -10,8 +10,6 @@ import java.io.IOException;
 
 @Configuration
 public class ServerConfig {
-//    @Value("${grpc.server.port}")
-//    private int port;
 
     @Bean
     public Server grpcServer(StudentGrpcImpl studentService) throws IOException {
