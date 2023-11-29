@@ -56,6 +56,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation 'net.devh:grpc-server-spring-boot-starter:2.15.0.RELEASE'
+	implementation 'org.modelmapper:modelmapper:3.2.0'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
