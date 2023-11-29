@@ -48,9 +48,7 @@ public class StudentFacade {
 //    }
     private Student mapToEntity(StudentOuterClass.Student student) {
         System.out.println("Student id in map ="+student.getStudentId());
-        Student student1= modelMapper.map(student,Student.class);
-//        student1.setStudent_id(student.getStudentId());
-        return student1;
+        return modelMapper.map(student,Student.class);
     }
 
     private StudentOuterClass.Student mapToProto(Student student) {
